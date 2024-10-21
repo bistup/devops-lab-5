@@ -13,12 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the code from the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
-        name: Build the code
+      # Step 2: Build the code using Makefile
+      - name: Build the code
         run: make
 
+      # Step 3: Upload the build artifact (executable)
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:
